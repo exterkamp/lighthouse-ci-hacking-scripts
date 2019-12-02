@@ -11,6 +11,12 @@ to be modified a bit.
 
 * Raspberry Pi 1 B+
 
+    ```shell
+    docker image build -t lhci .
+    docker volume create lhci-data
+    docker container run --publish 9001:9001 --mount='source=lhci-data,target=/data' --detach lhci
+    ```
+
 ### `run-and-upload.sh`
 
 1. Make a `urls.txt` file:
